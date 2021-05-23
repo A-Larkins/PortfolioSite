@@ -20,7 +20,7 @@
 
 <body id="page-top">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg bg-dark bg-secondary text-uppercase fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Andrew Larkins</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -199,7 +199,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+          <form id="contactForm" name="sentMessage" novalidate="novalidate" action="https://formspree.io/f/mnqlpryj" method="POST">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Name</label>
@@ -226,7 +226,11 @@
             </div>
             <br />
             <div id="success"></div>
-            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+            <div class="col-lg-4 col-md-5 col-sm-6 col-8">
+              <div class="form-group"><button class="uploadButton" id="sendMessageButton" type="submit">Send</button></div>
+
+
+            </div>
           </form>
         </div>
       </div>
@@ -240,36 +244,35 @@
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Location</h4>
           <p class="lead mb-0">
-            2215 John Daniel Drive
+            Fairless Hills, PA
             <br />
-            Clark, MO 65243
+            Greater Philadelphia Area
           </p>
         </div>
         <!-- Footer Social Icons-->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Around the Web</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.linkedin.com/in/andrew-larkins/"><i class="fab fa-fw fa-linkedin"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://github.com/A-Larkins"><i class="fab fa-fw fa-github"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://soundcloud.com/andrew-larkins-11158066"><i class="fab fa-fw fa-soundcloud"></i></a>
+
         </div>
         <!-- Footer About Text-->
         <div class="col-lg-4">
-          <h4 class="text-uppercase mb-4">About Freelancer</h4>
+          <h4 class="text-uppercase mb-4">Resume</h4>
           <p class="lead mb-0">
-            Freelance is a free to use, MIT licensed Bootstrap theme created by
-            <a href="http://startbootstrap.com">Start Bootstrap</a>
-            .
+            <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="Resume.pdf"><i class="far fa-fw fa-file"></i></a>
+
           </p>
         </div>
       </div>
     </div>
   </footer>
   <!-- Copyright Section-->
-  <div class="copyright py-4 text-center text-white">
+  <div class="copyright py-4 text-center text-white bg-secondary">
     <div class="container">
       <small>
-        Copyright &copy; Your Website
+        &copy; Andrew Larkins
         <!-- This script automatically adds the current year to your website footer-->
         <!-- (credit: https://updateyourfooter.com/)-->
         <script>
@@ -285,7 +288,7 @@
 
   <!-- Portfolio Modals-->
   <!-- Portfolio Modal 1-->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -318,6 +321,15 @@
                   I am going to continue to get better at these sorts of things and my next big thing I want to learn is React!
 
                 </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -357,6 +369,14 @@
                   is something that I value highly!
 
                 </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -398,7 +418,14 @@
                   low level, just know alot of concepts and some algorithm basics. I am sure I am missing some things, but I just
                   wanted to touch on some other technologies that I had in my background!
                 </p>
-
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -455,6 +482,14 @@
                   </div>
                 </div>
                 </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -489,6 +524,14 @@
                   <a href="https://github.com/A-Larkins/QuizFlash" target="_blank">GitHub</a>
 
                 </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -517,6 +560,14 @@
                   handles requests to store, update, and delete images, with some other features as well. I then spun up an EC2 server on AWS and used an S3 bucket to store all the images. To give server and S3 access to my professor, I assigned IAM
                   roles for him to use. I enjoyed working on the project, and the class in general, because we used popular technologies that are currently being used in industry!
                 </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -551,7 +602,14 @@
                   way. It is really rewarding to struggle with something so challenging that seems impossible. But if you can approach it the correct way, stick to it, and eventually you can do it!
 
                 </p>
-
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -579,8 +637,16 @@
                 <!-- Portfolio Modal - Text-->
                 <p class="mb-5" style="font-size:20px;">I’m a pretty big sports fan, particularly of all Philly sports. My favorites sports are baseball and football, but they’re all pretty close! I also am pretty big into fantasy football. I played
                   alot of sports as a kid including baseball, basketball, track, soccer, and more! These days I occasionally play some pickup basketball and golf. I also lift weights often and run sporadically. I love golf, but it is so hard! I
-                  definitely want to get better at it! </p>
-
+                  definitely want to get better at it!
+                </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -609,8 +675,16 @@
                 <p class="mb-5" style="font-size:20px;">I have always been a pretty big reader, and I have also always big a huge fan of audiobooks. Scifi and fantasy books are probably my favorite, but I always try to keep a balance of fiction and
                   non-fiction. Some of my favorite series are A Song Of Ice And Fire (George, please finish them already) and Harry Potter. I don’t even like thinking of cooking as a hobby because I don’t think I really do too many fancy things, but
                   I do enjoy it and I am pretty good at it. Really I just love to eat, I’d consider myself a “foodie” if it weren’t for the fact that I’m not a huge fan of that word. Some other things I’m into when I can find the time are movies, tv
-                  shows (good ones), and video games. One day I’d like to write a book, I just don’t know what it’ll be about!</p>
-
+                  shows (good ones), and video games. One day I’d like to write a book, I just don’t know what it’ll be about!
+                </p>
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <button class="btn uploadButton" href="#!" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      Close Window
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
