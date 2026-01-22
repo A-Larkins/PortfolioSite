@@ -1,0 +1,11 @@
+My main programming focus has always been web development. I was first introduced to HTML and CSS at a young age, mostly by tinkering with things like my MySpace page and later through computer labs in grade school. That early curiosity stuck.
+
+At Temple University, I began working more seriously with HTML, CSS, and vanilla JavaScript, manipulating the DOM and learning how the browser actually works. Around the same time, I was introduced to networking concepts and protocols, which is where things really clicked—requests, responses, state, and how data moves between a client and a server.
+
+That led me into server-side development with C# and the .NET ecosystem. I learned how to handle user input, dynamically display data, and work with databases, along with core concepts like validation, security, and serialization. From there, I moved into building web APIs, working with REST, and getting exposure to SOAP services and custom controls.
+
+Today, most of my professional work is in ASP.NET Core using Razor Pages, building full-stack web applications backed by SQL Server and Entity Framework Core. On the front end, I regularly use Telerik UI and Telerik Reporting, along with jQuery, AJAX, and Bootstrap, to build data-heavy, interactive interfaces that are actually usable in real-world scenarios.
+
+Along the way, I’ve also explored other stacks and tools—working with Node.js and Express, deploying applications, and experimenting with cloud services like AWS (EC2 and S3). Those experiences helped broaden my perspective, but my core strength is building reliable, maintainable web applications in the .NET ecosystem.
+
+Overall, I care less about chasing frameworks and more about understanding how the pieces fit together—from the database and server logic to the UI and user experience.

@@ -1,0 +1,9 @@
+One of the things I care most about in software is why something feels good or bad to use. I’ve always noticed how quickly people can get turned off by a single confusing screen, awkward workflow, or unclear behavior—and how that’s often enough for them to abandon an app entirely. A lot of software just feels clunky, and I’ve always been interested in understanding why.
+
+My entry point into design and modeling started with databases. Early on, I used tools like Draw.io and Lucidchart to create E-R diagrams and think through relationships before anything was built. That naturally led me into learning more about the Software Development Life Cycle and how important the early stages are—getting requirements right, understanding constraints, and actually figuring out what the user and the business are trying to accomplish.
+
+Over time, this shifted from “drawing diagrams” to building real systems. Today I regularly design and implement databases using SQL Server and Entity Framework in .NET, modeling entities, relationships, and migrations as part of production applications. Having to live with those decisions in real code has made me much more intentional about schema design, data integrity, and how models evolve over time.
+
+Alongside that, I’ve spent a lot of time thinking about user roles, user actions, and how those map to both the data model and the UI. That’s also where I picked up UX concepts—things like identifying problems worth solving, validating assumptions, and using feedback early instead of discovering issues after everything is already built. I’ve used tools like Axure to prototype and test ideas before committing to full implementations.
+
+I don’t see design, modeling, and development as separate steps. To me, good software comes from thinking through all of it together—how users think, how data flows, and how the system holds up as it grows.

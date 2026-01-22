@@ -1,0 +1,9 @@
+Beyond application development, I’m comfortable working with the tooling and systems that support building and maintaining software.
+
+I use Git and GitHub regularly for source control and collaboration. Databases have been a constant throughout my career—starting with Oracle and SQL, then MySQL, and most extensively SQL Server, where I’ve worked with T-SQL and stored procedures in production environments. I’m also familiar with NoSQL concepts, though most of my hands-on work has been relational.
+
+I primarily work in Windows in my professional role, using it daily for .NET development. Outside of work, I also use macOS for personal projects and experimentation, and I’ve previously worked in Linux environments (including Ubuntu, Mint, and Manjaro). I’m comfortable moving between operating systems and working from the command line when needed.
+
+My main development environment is Visual Studio, and I’ve also spent significant time using IntelliJ for Java-based work. I’m comfortable adapting to different IDEs, tools, and workflows depending on the project.
+
+I’ve built my own PC and have long been interested in computer hardware and repair. On the testing side, I regularly write unit tests and have experience with UI testing, along with general testing practices and security fundamentals, including networking and application-level security concepts.
