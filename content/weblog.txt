@@ -1,7 +1,0 @@
-Weblog is a large-scale enterprise system built in support of NAVSEA Code 423 in Philadelphia for the U.S. Navy. It consolidated six+ legacy applications into a single modern platform used by thousands of Navy personnel, and went live on March 1, 2024.
-
-I was part of the MGTIS (Marine Gas Turbine Information System) team and worked on the transition from the legacy systems to the new ASP.NET Core application. My role spanned the full stack — C#, JavaScript, Entity Framework Core, and Telerik UI — across feature development, system architecture, and ongoing maintenance, in an Agile environment using Jira.
-
-The system handles mission-critical data in a secure environment; I held a Top Secret clearance for this work.
-
-Replacing software people depend on turned out to be much more than a technical exercise. The data model had to absorb years of accumulated edge cases, and the new interface had to earn trust from users who had every reason to be skeptical of another rewrite.
