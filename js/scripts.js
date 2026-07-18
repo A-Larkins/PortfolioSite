@@ -146,12 +146,19 @@
     }
 
     document.querySelectorAll('[data-modal]').forEach(trigger => {
-        trigger.addEventListener('click', () => openModal(trigger));
+        // A card can contain its own links (e.g. "View source"). Those should follow
+        // the link rather than also opening the card's modal behind the new tab.
+        const fromNestedLink = e => e.target.closest('a') !== null;
+
+        trigger.addEventListener('click', e => {
+            if (fromNestedLink(e)) return;
+            openModal(trigger);
+        });
         trigger.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openModal(trigger);
-            }
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            if (fromNestedLink(e)) return;
+            e.preventDefault();
+            openModal(trigger);
         });
     });
 

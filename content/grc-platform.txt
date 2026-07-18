@@ -1,0 +1,7 @@
+At WellHive I work on an internal governance, risk, and compliance platform — the system the company uses to manage security controls, evidence, and continuous monitoring for a FedRAMP High environment.
+
+I joined the team recently, so the platform was well established before I arrived. My work is feature development on an existing codebase: picking up requirements, building them out across the stack, and getting them through review and into the product.
+
+The stack is TypeScript end to end. React on the front, Express services behind it, Drizzle ORM over PostgreSQL, all deployed to AWS. Coming from years of C# and Entity Framework, a lot of it mapped over more directly than I expected — an ORM is an ORM, and the questions you ask about a schema don't change with the language.
+
+The compliance domain is the genuinely new part. Working somewhere that has to satisfy FedRAMP High means the requirements come with a paper trail attached: what changed, who approved it, and whether you can demonstrate that months later to someone who wasn't there. It's a useful constraint to design under, and it's made me more careful about the things that are easy to skip when nobody is going to audit them.
