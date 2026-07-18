@@ -3,344 +3,387 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Portfolio Site" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Andrew Larkins — Software Engineer building secure, compliant web applications." />
   <meta name="author" content="Andrew Larkins" />
-  <title>Andrew Larkins - Software Developer</title>
+  <title>Andrew Larkins — Software Engineer</title>
   <link rel="icon" href="favicon.ico">
-  
-  <!-- Font Awesome -->
-  <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" crossorigin="anonymous"></script>
-  
-  <!-- Google Fonts - Modern -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#page-top">Andrew Larkins - Portfolio Site</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a class="nav-brand" href="#top">
+        <span class="nav-brand-mark">AL</span>
+        <span class="nav-brand-text">Andrew Larkins</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero text-white" id="page-top">
-    <div class="container hero-content text-center">
-      <img src="images/andrew2.png" alt="Andrew Larkins" class="profile-img mb-4" />
-      <h1 class="mb-3">Andrew Larkins</h1>
-      <p class="mb-4">Software Developer</p>
-    </div>
-  </section>
+  <main id="main">
 
-   <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2 class="section-title text-center w-100 mb-5">Hi!</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <p class="lead text-center">
-            I’m Andrew, a software engineer focused on building web applications. I work at Green XT in Philadelphia, where I help build and maintain systems that support U.S. Navy operations.
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Engineer II · WellHive</p>
+          <h1>I build web applications that have to be <em>secure</em>.</h1>
+          <p class="hero-lede">
+            Full-stack engineer in the Greater Philadelphia area. I work in TypeScript, Go, React,
+            and AWS — currently on internal governance, risk, and compliance tooling in a
+            FedRAMP High environment.
           </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">See my work</a>
+            <a class="btn btn-ghost" href="Resume.pdf" target="_blank" rel="noopener">
+              Download résumé
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            </a>
+          </div>
+          <ul class="hero-meta">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Greater Philadelphia</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg><a href="mailto:andrewrlarkins@gmail.com">andrewrlarkins@gmail.com</a></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 years building software</li>
+          </ul>
+        </div>
+        <div class="hero-portrait">
+          <img src="images/andrew2.png" width="517" height="517" alt="Andrew Larkins" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="portfolio" class="bg-light">
-    <div class="container">
-      <h2 class="section-title text-center w-100 mb-5">Skills</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal1" data-content="web-development">
-            <img src="images/webdev.jpg" class="card-img-top" alt="Web Development" />
-            <div class="card-body">
-              <h5 class="card-title">Web Development</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal2" data-content="design-modeling">
-            <img src="images/db-design.jpg" class="card-img-top" alt="Design & Modeling" />
-            <div class="card-body">
-              <h5 class="card-title">Design & Modeling</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal3" data-content="other-skills">
-            <img src="images/db.jpg" class="card-img-top" alt="Other Skills" />
-            <div class="card-body">
-              <h5 class="card-title">Other Skills</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Projects Section -->
- <section class="bg-white">
-    <div class="container">
-      <h2 class="section-title text-center w-100 mb-5">Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal4" data-content="weblog">
-            <img src="images/navsea.png" class="card-img-top" alt="Weblog" />
-            <div class="card-body">
-              <h5 class="card-title">Weblog</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal5" data-content="52weekmoviechallengehelper">
-            <img src="images/movie.jpg" class="card-img-top" alt="52 Week Movie Challenge Helper" />
-            <div class="card-body">
-              <h5 class="card-title">52 Week Movie Challenge Helper</h5>
-            </div>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <p class="section-kicker">01 — About</p>
+        <div class="about-grid">
+          <h2 class="section-title">Hi, I'm Andrew.</h2>
+          <div class="about-body">
+            <p>
+              I'm a software engineer at <strong>WellHive</strong>, where I work on internal
+              governance, risk, and compliance tooling. Before that I spent nearly five years at
+              <strong>Green XT</strong> building Weblog — an enterprise ASP.NET Core system that
+              replaced six legacy applications and serves thousands of U.S. Navy personnel.
+            </p>
+            <p>
+              Most of my career has been spent in environments where "it works" isn't enough:
+              the system also has to be auditable, access-controlled, and defensible to someone
+              holding a compliance checklist. That's shaped how I build. I care about data
+              modeling, clear boundaries, and interfaces people can actually use under pressure.
+            </p>
+            <p>
+              Lately I've been working further up the stack than I used to — React and TypeScript
+              on the front, Go and Node on the back, Postgres and pgvector underneath, and
+              infrastructure defined in Pulumi and shipped to AWS GovCloud.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hobbies Section -->
-  <section class="bg-light">
-    <div class="container">
-      <h2 class="section-title text-center w-100 mb-5">Hobbies</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal7" data-content="music">
-            <img src="images/music.jpg" class="card-img-top" alt="Music" />
-            <div class="card-body">
-              <h5 class="card-title">Music</h5>
+    <!-- Experience -->
+    <section id="experience" class="section section-alt">
+      <div class="wrap">
+        <p class="section-kicker">02 — Experience</p>
+        <h2 class="section-title">Where I've worked</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item is-current">
+            <div class="timeline-head">
+              <h3>Software Engineer II</h3>
+              <span class="timeline-org">WellHive</span>
+              <span class="timeline-dates">May 2026 — Present</span>
             </div>
+            <p class="timeline-loc">Remote</p>
+            <p>
+              Building Vigil, an internal GRC platform, alongside the broader compliance
+              engineering effort. Working in TypeScript and Go across React, Express, and
+              PostgreSQL, deployed to AWS GovCloud under FedRAMP High.
+            </p>
+            <ul class="tag-row">
+              <li>TypeScript</li><li>Go</li><li>React 18</li><li>AWS GovCloud</li><li>FedRAMP High</li>
+            </ul>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <h3>Software Engineer II</h3>
+              <span class="timeline-org">Green XT</span>
+              <span class="timeline-dates">Aug 2024 — May 2026</span>
+            </div>
+            <p class="timeline-loc">Remote</p>
+            <ul class="bullets">
+              <li>Integral member of the MGTIS (Marine Gas Turbine Information System) team, driving development of the Weblog application.</li>
+              <li>Spearheaded the transition from multiple legacy applications to the Weblog ASP.NET Core web application, culminating in its successful deployment on March 1, 2024, serving thousands of Navy personnel.</li>
+              <li>Proficiently utilized C#, JavaScript, Entity Framework Core, and Telerik UI to architect and maintain the Weblog system.</li>
+              <li>Operated in a full-stack capacity, employing Agile methodologies and Jira for efficient task management and prioritization.</li>
+            </ul>
+            <ul class="tag-row">
+              <li>C#</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>Telerik UI</li><li>SQL Server</li>
+            </ul>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <h3>Software Engineer</h3>
+              <span class="timeline-org">Green XT</span>
+              <span class="timeline-dates">Aug 2021 — Aug 2024</span>
+            </div>
+            <p class="timeline-loc">Remote</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <p class="section-kicker">03 — Projects</p>
+        <h2 class="section-title">Things I've built</h2>
+
+        <div class="card-grid">
+          <article class="proj-card" data-modal="vigil" tabindex="0" role="button" aria-label="Read more about Vigil">
+            <div class="proj-media proj-media-vigil" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 8.2-7 9-4-.8-7-4.6-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="proj-body">
+              <p class="proj-org">WellHive · Internal</p>
+              <h3>Vigil</h3>
+              <p>An internal governance, risk, and compliance platform for managing controls, evidence, and continuous monitoring in a FedRAMP High environment.</p>
+              <ul class="tag-row">
+                <li>React</li><li>Go</li><li>PostgreSQL</li><li>OSCAL</li><li>Bedrock</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card" data-modal="weblog" tabindex="0" role="button" aria-label="Read more about Weblog">
+            <div class="proj-media">
+              <img src="images/navsea.png" width="233" height="216" alt="" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-org">Green XT · U.S. Navy</p>
+              <h3>Weblog</h3>
+              <p>Enterprise ASP.NET Core system that consolidated six-plus legacy applications into one platform used by thousands of Navy personnel.</p>
+              <ul class="tag-row">
+                <li>C#</li><li>ASP.NET Core</li><li>EF Core</li><li>Telerik UI</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card" data-modal="52weekmoviechallengehelper" tabindex="0" role="button" aria-label="Read more about the 52 Week Movie Challenge Helper">
+            <div class="proj-media">
+              <img src="images/movie.jpg" width="612" height="612" alt="" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-org">Personal</p>
+              <h3>52 Week Movie Challenge Helper</h3>
+              <p>A C# CLI that pulls from OMDb and TMDB to fill out a movie logbook in seconds instead of a dozen browser tabs.</p>
+              <ul class="tag-row">
+                <li>C#</li><li>.NET</li><li>REST APIs</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="wrap">
+        <p class="section-kicker">04 — Skills</p>
+        <h2 class="section-title">Technical toolkit</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Languages &amp; Runtimes</h3>
+            <ul class="tag-row"><li>TypeScript</li><li>Go</li><li>SQL</li><li>Node.js 20</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="tag-row"><li>React 18</li><li>React Router 7</li><li>PrimeReact</li><li>Vite</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend &amp; Data</h3>
+            <ul class="tag-row"><li>Express</li><li>Drizzle ORM</li><li>PostgreSQL 15</li><li>pgvector</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Cloud &amp; Infrastructure</h3>
+            <ul class="tag-row"><li>AWS ECS Fargate</li><li>Aurora Serverless</li><li>S3</li><li>Lambda</li><li>KMS</li><li>ECR</li><li>STS</li><li>Systems Manager</li><li>AWS GovCloud</li><li>Pulumi</li><li>Docker</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Security &amp; Compliance</h3>
+            <ul class="tag-row"><li>FedRAMP High</li><li>OSCAL</li><li>NIST 800-53 Rev 5</li><li>HIPAA</li><li>OWASP ZAP</li><li>CISA KEV</li><li>OIDC / OAuth 2.0</li><li>Okta</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>AI / ML</h3>
+            <ul class="tag-row"><li>AWS Bedrock</li><li>Vector Embeddings (Amazon Titan)</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Testing &amp; CI/CD</h3>
+            <ul class="tag-row"><li>Jest</li><li>Supertest</li><li>GitHub Actions</li><li>ESLint</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Other Tools</h3>
+            <ul class="tag-row"><li>Temporal</li><li>Git</li><li>Jira</li><li>REST</li></ul>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal8" data-content="sports">
-            <img src="images/sports.jpg" class="card-img-top" alt="Sports" />
-            <div class="card-body">
-              <h5 class="card-title">Sports</h5>
+
+        <div class="credentials">
+          <div class="cred-col">
+            <h3>Education</h3>
+            <div class="cred-item">
+              <p class="cred-title">Temple University, College of Science &amp; Technology</p>
+              <p class="cred-sub">Philadelphia, PA</p>
+              <p>B.S. Information Science &amp; Technology — Spring 2021</p>
+              <p class="cred-note">Dean's List: Fall 2020, Spring 2021</p>
+            </div>
+            <div class="cred-item">
+              <p class="cred-title">Bucks County Community College</p>
+              <p class="cred-sub">Newtown, PA</p>
+              <p>A.A. Liberal Arts, General Emphasis — Spring 2016</p>
+              <p class="cred-note">Dean's List: Fall 2015 – Spring 2016</p>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal9" data-content="reading">
-            <img src="images/library.jpg" class="card-img-top" alt="Reading" />
-            <div class="card-body">
-              <h5 class="card-title">Reading</h5>
+          <div class="cred-col">
+            <h3>Certifications</h3>
+            <div class="cred-item">
+              <p class="cred-title">CompTIA Security+</p>
+              <p class="cred-note">Issued October 2021</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-light">
-    <div class="container">
-      <h2 class="section-title text-center w-100 mb-5">Contact Me</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <form action="https://formspree.io/f/mnqlpryj" method="POST">
-            <div class="mb-3">
-              <input type="text" class="form-control" name="name" placeholder="Your Name" required />
+    <!-- Beyond work -->
+    <section id="beyond" class="section">
+      <div class="wrap">
+        <p class="section-kicker">05 — Beyond work</p>
+        <h2 class="section-title">Outside the editor</h2>
+
+        <div class="card-grid card-grid-3">
+          <article class="proj-card" data-modal="music" tabindex="0" role="button" aria-label="Read more about music">
+            <div class="proj-media"><img src="images/music.jpg" width="1920" height="1280" alt="" /></div>
+            <div class="proj-body"><h3>Music</h3><p>Drums, guitar, and as many concerts as I can get to.</p></div>
+          </article>
+          <article class="proj-card" data-modal="sports" tabindex="0" role="button" aria-label="Read more about sports">
+            <div class="proj-media"><img src="images/sports.jpg" width="1920" height="1288" alt="" /></div>
+            <div class="proj-body"><h3>Sports</h3><p>Philly teams, lifting, golf, and lately a lot of disc golf.</p></div>
+          </article>
+          <article class="proj-card" data-modal="reading" tabindex="0" role="button" aria-label="Read more about reading">
+            <div class="proj-media"><img src="images/library.jpg" width="1920" height="1281" alt="" /></div>
+            <div class="proj-body"><h3>Reading &amp; Cooking</h3><p>Sci-fi, fantasy, and a standing grudge about unfinished book series.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="wrap">
+        <p class="section-kicker">06 — Contact</p>
+        <div class="contact-grid">
+          <div>
+            <h2 class="section-title">Let's talk.</h2>
+            <p class="contact-lede">
+              I'm always happy to talk shop — compliance engineering, .NET, or which Philly team
+              is going to break my heart next.
+            </p>
+            <ul class="contact-list">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                <a href="mailto:andrewrlarkins@gmail.com">andrewrlarkins@gmail.com</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Warminster, PA · Greater Philadelphia
+              </li>
+            </ul>
+            <div class="social-row">
+              <a href="https://www.linkedin.com/in/andrew-larkins/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21h-4V9Z"/></svg>
+              </a>
+              <a href="https://github.com/A-Larkins" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+              </a>
+              <a href="Resume.pdf" target="_blank" rel="noopener" aria-label="Résumé">
+                <svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+              </a>
             </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required />
-            </div>
-            <div class="mb-3">
-              <input type="tel" class="form-control" name="phone" placeholder="Phone Number" />
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </div>
+
+          <form class="contact-form" action="https://formspree.io/f/mnqlpryj" method="POST">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span>Phone <em>(optional)</em></span>
+              <input type="tel" name="phone" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Send message</button>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <h5 class="fw-bold mb-3">Location</h5>
-          <p>Warminster, PA<br />Greater Philadelphia Area</p>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <h5 class="fw-bold mb-3">Connect</h5>
-          <div>
-            <a href="https://www.linkedin.com/in/andrew-larkins/" target="_blank" class="social-btn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/A-Larkins" target="_blank" class="social-btn">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <h5 class="fw-bold mb-3">Resume</h5>
-          <a href="Resume.pdf" target="_blank" class="social-btn">
-            <i class="far fa-file"></i>
-          </a>
-        </div>
-      </div>
-      <div class="text-center mt-4 pt-3 border-top border-secondary">
-        <small>&copy; <span id="year"></span> Andrew Larkins</small>
-      </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year"></span> Andrew Larkins</p>
+      <p class="footer-built">Built by hand — no framework, no build step.</p>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
-  <a href="#page-top" class="scroll-to-top">
-    <i class="fas fa-chevron-up"></i>
+  <a href="#top" class="scroll-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
   </a>
 
-  <div class="modal fade" id="portfolioModal1" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Web Development</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
+  <!-- Modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button class="modal-close" data-close aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
     </div>
   </div>
 
-  <!-- Portfolio Modal 2 - Design & Modeling -->
-  <div class="modal fade" id="portfolioModal2" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Design and Modeling</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 3 - Other Skills -->
-  <div class="modal fade" id="portfolioModal3" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Other Skills</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 4 - Weblog -->
-  <div class="modal fade" id="portfolioModal4" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Weblog</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 5 - 52 Week Movie Challenge Helper -->
-  <div class="modal fade" id="portfolioModal5" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">52 Week Movie Challenge Helper</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 7 - Music -->
-  <div class="modal fade" id="portfolioModal7" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Music</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 8 - Sports -->
-  <div class="modal fade" id="portfolioModal8" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Sports</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Portfolio Modal 9 - Reading & Cooking -->
-  <div class="modal fade" id="portfolioModal9" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Reading & Cooking</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-text"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/scripts.js"></script>
-
 </body>
 
 </html>

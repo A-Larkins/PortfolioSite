@@ -1,5 +1,7 @@
-I work on the Weblog application in support of NAVSEA Code 423 in Philadelphia for the U.S. Navy. Weblog is a large-scale enterprise system that consolidated six+ legacy applications into a single modern platform used by thousands of Navy personnel.
+Weblog is a large-scale enterprise system built in support of NAVSEA Code 423 in Philadelphia for the U.S. Navy. It consolidated six+ legacy applications into a single modern platform used by thousands of Navy personnel.
 
-I’m an integral member of the MGTIS (Marine Gas Turbine Information System) team and was heavily involved in the transition from the legacy systems to the new ASP.NET Core Weblog application, which successfully went live on March 1, 2024. The system handles mission-critical data and operates within a secure environment, and I hold a Top Secret clearance.
+I was an integral member of the MGTIS (Marine Gas Turbine Information System) team and was heavily involved in the transition from the legacy systems to the new ASP.NET Core Weblog application, which successfully went live on March 1, 2024. The system handles mission-critical data and operates within a secure environment; I held a Top Secret clearance for this work.
 
-My role spans the full stack, working primarily with C#, JavaScript, Entity Framework Core, and Telerik UI. I contribute to system architecture, feature development, and ongoing maintenance, working in an Agile environment and using Jira to manage and prioritize work.
+My role spanned the full stack, working primarily with C#, JavaScript, Entity Framework Core, and Telerik UI. I contributed to system architecture, feature development, and ongoing maintenance, working in an Agile environment and using Jira to manage and prioritize work.
+
+Weblog was where I learned what it actually takes to replace software people depend on. Migrating users off systems they've used for years is far more than a technical exercise — the data model has to absorb years of accumulated edge cases, and the new interface has to earn trust from people who had every reason to be skeptical of another rewrite.

@@ -1,0 +1,11 @@
+Vigil is WellHive's internal governance, risk, and compliance platform. Operating in a FedRAMP High environment means the evidence behind every security control has to be collected, tracked, and produced on demand — and doing that in spreadsheets doesn't scale. Vigil is the system that replaces the spreadsheets.
+
+The platform centers on NIST 800-53 Rev 5 controls and OSCAL, the machine-readable format for expressing control catalogs, system security plans, and assessment results. Modeling that structure properly is most of the problem: controls, parameters, implementation statements, and evidence artifacts all relate to each other in ways that have to stay consistent as the system evolves and as assessors ask questions about it.
+
+I work across the stack on it. The front end is React 18 with React Router and PrimeReact, built with Vite — dense, table-heavy screens for people who work in this tool all day and need to move quickly through it. On the back end I work in TypeScript and Go, with Express services over PostgreSQL 15 using Drizzle ORM, and Temporal for the long-running workflows that continuous monitoring depends on. Authentication runs through Okta over OIDC and OAuth 2.0.
+
+Vigil also uses AWS Bedrock and vector embeddings via Amazon Titan, stored in Postgres with pgvector, to make the control corpus searchable by meaning rather than keyword. Compliance language is repetitive and heavily cross-referenced, so being able to find related controls and prior evidence semantically saves a real amount of time.
+
+The whole thing runs in AWS GovCloud — ECS Fargate, Aurora Serverless, S3, Lambda, KMS — with infrastructure defined in Pulumi and shipped through GitHub Actions. Security tooling is part of the pipeline rather than an afterthought, including OWASP ZAP scanning and tracking against the CISA Known Exploited Vulnerabilities catalog.
+
+Working on a compliance product has changed how I think about building software generally. When every action may need to be explained to an auditor months later, you get serious very quickly about data integrity, audit trails, and making the system's behavior legible to someone who wasn't in the room when it was built.

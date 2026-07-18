@@ -1,134 +1,170 @@
 (function () {
     "use strict";
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.offsetTop - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    /* ------------------------------------------------------------ Navbar */
+
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', () => {
+        const open = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!open));
+        navMenu.classList.toggle('is-open', !open);
     });
 
-    // Scroll to top button appear/disappear
-    const scrollToTopBtn = document.querySelector('.scroll-to-top');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            scrollToTopBtn.style.opacity = '1';
-            scrollToTopBtn.style.visibility = 'visible';
-        } else {
-            scrollToTopBtn.style.opacity = '0';
-            scrollToTopBtn.style.visibility = 'hidden';
-        }
-    });
-
-    // Initially hide scroll to top button
-    scrollToTopBtn.style.opacity = '0';
-    scrollToTopBtn.style.visibility = 'hidden';
-    scrollToTopBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
-
-    // Close navbar on mobile when clicking a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    navLinks.forEach(link => {
+    // Close the mobile menu after picking a destination
+    navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            if (navbarCollapse.classList.contains('show')) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
-            }
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('is-open');
         });
     });
 
-    // Add active class to navbar items on scroll
-    window.addEventListener('scroll', function() {
-        let scrollPosition = window.scrollY;
-        
-        document.querySelectorAll('section[id]').forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+    /* ------------------------------------------- Scroll-driven UI states */
+
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...navMenu.querySelectorAll('a[href^="#"]')];
+
+    function onScroll() {
+        const y = window.scrollY;
+
+        nav.classList.toggle('is-scrolled', y > 20);
+        scrollTopBtn.classList.toggle('is-visible', y > 400);
+
+        // Highlight the section currently under the navbar
+        const marker = y + nav.offsetHeight + 80;
+        let current = null;
+        sections.forEach(section => {
+            if (section.offsetTop <= marker) current = section.id;
         });
-    });
 
-    // Navbar shrink on scroll
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-        }
-    });
-
-    // Set current year in footer
-    const yearElement = document.getElementById('year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+        navLinks.forEach(link => {
+            link.classList.toggle('is-active', link.getAttribute('href') === `#${current}`);
+        });
     }
 
-    // Add entrance animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { onScroll(); ticking = false; });
+    }, { passive: true });
+    onScroll();
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+    /* --------------------------------------------- Smooth anchor scroll */
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+            const top = href === '#top' ? 0 : target.offsetTop - nav.offsetHeight + 1;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+    });
+
+    /* ------------------------------------------------- Reveal on scroll */
+
+    const revealTargets = [...document.querySelectorAll(
+        '.proj-card, .skill-group, .timeline-item, .cred-item, .about-body, .contact-form'
+    )];
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        // Only animate what starts off-screen. Anything already in view — including
+        // on a deep link like /#projects — renders immediately rather than waiting
+        // on the observer, so content is never left invisible.
+        revealTargets.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight) return;
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    }
+
+    /* -------------------------------------------------------- Modal */
+
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const cache = new Map();
+    let lastFocused = null;
+
+    function paragraphs(text) {
+        return text
+            .trim()
+            .split(/\n\s*\n/)
+            .map(block => `<p>${block.trim().replace(/\n/g, ' ')}</p>`)
+            .join('');
+    }
+
+    async function openModal(trigger) {
+        const slug = trigger.dataset.modal;
+        if (!slug) return;
+
+        lastFocused = trigger;
+        modalTitle.textContent = trigger.querySelector('h3').textContent;
+        modalBody.innerHTML = '<p>Loading…</p>';
+
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+        modal.querySelector('.modal-close').focus();
+
+        if (cache.has(slug)) {
+            modalBody.innerHTML = cache.get(slug);
+            return;
+        }
+
+        try {
+            const response = await fetch(`content/${slug}.txt`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const html = paragraphs(await response.text());
+            cache.set(slug, html);
+            modalBody.innerHTML = html;
+        } catch (error) {
+            console.error('Error loading modal content:', error);
+            modalBody.innerHTML = '<p>Sorry — that content failed to load.</p>';
+        }
+    }
+
+    function closeModal() {
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+        if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('[data-modal]').forEach(trigger => {
+        trigger.addEventListener('click', () => openModal(trigger));
+        trigger.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(trigger);
             }
         });
-    }, observerOptions);
-
-    // Observe cards for animation
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
     });
 
-    // Load modal content from text files
-    document.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget; // Button that triggered the modal
-        const contentFile = button.getAttribute('data-content');
-        const modal = event.target; // The modal
-        const modalText = modal.querySelector('.modal-text');
-        
-        if (contentFile && modalText) {
-            fetch(`content/${contentFile}.txt`)
-                .then(response => response.text())
-                .then(text => {
-                    modalText.innerHTML = text;
-                })
-                .catch(error => {
-                    console.error('Error loading modal content:', error);
-                    modalText.innerHTML = '<p>Error loading content.</p>';
-                });
-        }
+    modal.querySelectorAll('[data-close]').forEach(el => {
+        el.addEventListener('click', closeModal);
     });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+
+    /* --------------------------------------------------------- Footer */
+
+    document.getElementById('year').textContent = new Date().getFullYear();
 
 })();
