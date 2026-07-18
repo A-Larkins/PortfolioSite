@@ -1,11 +1,13 @@
-I'm working through <em>1001 Albums You Must Hear Before You Die</em> — the whole list, in order — and tracking it all in Google Sheets. Three lists, really: the master list with my ratings, a "must hear" list of everything I starred, and a list of my own replacement albums for the ones I'd swap out.
+I'm working through <em>1001 Albums You Must Hear Before You Die</em> and tracking it in Google Sheets — the master list with my ratings, a starred "must hear" list, and my own replacement picks. Keeping those three in sync by hand meant copying rows between tabs and renumbering everything by hand. So I built an app to do it.
 
-Keeping those in sync by hand was the problem. I was copying and pasting rows between tabs, renumbering everything by hand whenever I inserted an album, and inevitably ending up with lists that disagreed with each other. So I built an app to do it properly.
+C# on .NET 10, Avalonia for the UI, packaged as a macOS app. It reads and writes the Google Sheets API in both directions, so the spreadsheet stays the source of truth and I can still edit it from my phone.
 
-It's a C# desktop app built on Avalonia, running on .NET 10, and it talks to the Google Sheets API in both directions. It pulls the current state of every list down, and it writes changes back — so the spreadsheet stays the source of truth and I can still edit it by hand on my phone if I want.
+What it does:
 
-The part I care most about is that it validates rather than just writes. Adding a replacement album checks it against both lists first, so I can't introduce a duplicate or an album that's already in the 1001. Sync is a reconcile pass, not a blind overwrite: it works out what's actually different, adds starred albums missing from the "must hear" list, removes rows that shouldn't be there anymore, and places new entries in the right spot by year before renumbering. There's a read-only status check that tells me what a sync <em>would</em> change before I let it touch anything, which is the feature I'd want in any tool that writes to data I care about.
+• Sync is a reconcile pass, not an overwrite — it works out what's actually different, adds starred albums missing from the must-hear list, drops rows that shouldn't be there, and places new entries by year before renumbering.<br>
+• A read-only check tells me what a sync would change before anything gets written.<br>
+• Adding a replacement validates against both lists first, so no duplicates.<br>
+• Rating session for working through albums one at a time.<br>
+• Searchable viewer, PDF export via QuestPDF, and it scrapes Discogs to refresh the canonical list.
 
-On top of that it has a rating session for working through albums one at a time, a searchable viewer for the combined list, and a PDF export via QuestPDF. It scrapes the canonical list from Discogs when I need to refresh it. It's packaged as a self-contained macOS .app bundle, so it launches like any other program rather than something I have to run from a terminal.
-
-I built it with AI assistance, which is a large part of why it exists at all. The idea had been sitting on my list for a while, and having something to think through the design with — and to argue with about edge cases in the sync logic — is what got it from "annoying spreadsheet chore" to a finished tool I actually use every week.
+Built with AI assistance, which is most of why it exists — the idea had been sitting on my list for a long time.

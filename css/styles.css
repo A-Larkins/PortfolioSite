@@ -339,6 +339,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   margin-bottom: 2.75rem;
 }
 
+.section-title + .section-lede {
+  margin: -1.9rem 0 2.6rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  max-width: 55ch;
+}
+
 /* ---------------------------------------------------------------- About */
 
 .about-grid {
