@@ -613,9 +613,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+/* Keep linked contact details a comfortable touch target on phones */
+.contact-list a,
+.hero-meta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .contact-list svg { color: var(--accent); width: 1.15em; height: 1.15em; flex-shrink: 0; }
 
@@ -838,7 +845,10 @@ body.modal-open { overflow: hidden; }
   .hero { padding: 8.5rem 0 4.5rem; }
   .section { padding: 4.5rem 0; }
   .timeline-dates { margin-left: 0; }
-  .scroll-top { right: 1rem; bottom: 1rem; }
+
+  /* Hidden on phones: it sits on top of the contact form fields, and mobile
+     browsers already make it easy to get back to the top. */
+  .scroll-top { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
