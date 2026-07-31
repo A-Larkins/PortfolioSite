@@ -1,0 +1,13 @@
+My wishlist was scattered across Amazon carts, a couple of app store links, and a running note in my phone — no single place that showed the full picture. So I built one place to hold all of it.
+
+Swift and SwiftUI, native macOS, with everything stored locally.
+
+What it does:
+
+• Items live in custom categories, each with its own color, so a glance at the list tells you what kind of thing you're looking at.<br>
+• Every item carries an estimated cost, rolled up into running totals per category and overall — so "how much would it cost to buy everything I want" is always one look away.<br>
+• Priority cycles Low/Medium/High with a click, and the list sorts by date added, price, or priority depending on how you want to triage it.<br>
+• Notes and a purchase link travel with each item, so the context that made you want it in the first place doesn't get lost.<br>
+• Marking something purchased moves it out of the active list without deleting it, so the history sticks around.
+
+It's a small app, but it replaced four different half-used lists with one.

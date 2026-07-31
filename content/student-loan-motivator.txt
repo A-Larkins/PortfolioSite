@@ -1,0 +1,13 @@
+Federal student loan interest accrues every second whether you're watching or not. I wanted a dashboard that made that fact impossible to ignore — and that told me, every month, whether I was actually winning.
+
+Python and Tkinter, single-file, packaged as a macOS app. Sibling project to an earlier budget app of mine, same bones: JSON storage, a one-second tick, no third-party dependencies.
+
+What it does:
+
+• Instead of simulating amortization from origination, it works off snapshots — you enter the real current principal from your servicer, dated, and it accrues simple daily interest forward from there until the next snapshot resyncs it.<br>
+• The centerpiece is "the race": interest accrued this month versus what you've paid, split by a break-even line, so you know in real time whether you're ahead of the interest or behind it.<br>
+• Loans are ranked into a kill order — highest rate first — so it's obvious which one to attack.<br>
+• Every payment gets an autopsy: how much went to interest versus principal, and how many days closer to freedom it moved you.<br>
+• No real balance ever lives in the repo — the app writes to a path outside the project, and the schema example is entirely fake numbers.
+
+It's a motivator, not an amortization schedule — the honest kind of estimate that stays close to truth because it resyncs every month instead of pretending to model years of history it never saw.

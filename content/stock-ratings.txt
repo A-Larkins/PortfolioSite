@@ -1,0 +1,13 @@
+I wanted a way to screen stocks the way Warren Buffett writes about them — durable margins, low debt, growing earnings — instead of reading ratios one company at a time. So I built a rating engine and pointed it at the S&amp;P 500.
+
+Python and Streamlit, packaged as a native Mac app with PyInstaller. Started as a stripped-down fork of a Buffett chatbot project; the chatbot and trained model are gone, and the ratio engine and ranked list became the whole point.
+
+What it does:
+
+• Pulls financials from Yahoo Finance and scores every company against 15 criteria drawn from Buffett's writing — margins, debt, buybacks, ROE, and more.<br>
+• Converts the pass rate into a letter grade, A+ down to F, ranked into a sortable list with one-click views like "A and up" or "best per sector."<br>
+• Company detail pages break down exactly which criteria passed and failed, with the reasoning behind each threshold.<br>
+• A watchlist persists starred tickers between launches, with grade and price at a glance.<br>
+• Caches results for a week since annual statements barely move, so a full 503-company scan runs in about 90 seconds.
+
+It's a screen, not investment advice — but it turned an afternoon of ratio-checking into a five-second lookup.
