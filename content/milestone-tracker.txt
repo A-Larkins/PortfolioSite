@@ -6,7 +6,7 @@ What it does:
 
 • Three item types cover almost anything: a plain checkbox for one-off goals, a fill-in blank for a number you settle at year end, and an anniversary line that auto-advances every year on its own.<br>
 • Every year gets its own tab — the current one editable, every past year archived and still browsable — with full add/rename/delete on milestones, groups, and categories, current or past.<br>
-• A timeline view pulls every achieved milestone across every year into one newest-first feed, sorted by a real-world date if you've set one, so you can backdate things like a wedding instead of losing them to whenever you happened to check the box.<br>
+• Milestones carry a real-world date separate from when you checked the box, so a wedding backdates to when it actually happened rather than to whenever you got around to recording it.<br>
 • "Close Year" archives the year and starts the next one — unfinished items and anniversaries roll forward automatically, achieved ones stay put in history.<br>
 • A report tab renders a PDF summary of everything accomplished, grouped by category, cached until you ask it to regenerate.
 

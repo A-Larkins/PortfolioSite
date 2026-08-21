@@ -1,0 +1,15 @@
+A desktop dashboard that turns a paycheck into a live number. It doesn't manage a budget so much as watch one tick.
+
+Python and Tkinter, single-file, packaged as a macOS app — the older sibling to Student Loan Motivator and the project that established the shape both of them use: JSON storage, a one-second tick, no third-party dependencies you can't run without.
+
+What it does:
+
+• Spreads annual take-home across roughly 260 workdays and then across the current workday's clock hours, so before your start time it reads $0, during the day it climbs in real time, and after you're done it shows the full day's earnings.<br>
+• Funds the month's bills biggest-first out of what's accrued so far, each with its own progress bar, reordering so whichever bill is currently being covered floats to the top.<br>
+• Tracks 401k separately off gross salary, since payroll bases the contribution on gross while every other figure in the app is take-home.<br>
+• Handles multiple earners and cycles between views — just me, me plus PTO and bonuses, the whole household — with bonuses spread evenly across the year rather than landing all at once.<br>
+• Syncs income sources and bills out of an Excel workbook, locating the tables by header text rather than fixed cell references, so a reordered or retyped sheet still parses.
+
+The design decision worth naming is what it <em>doesn't</em> do. Student Loan Motivator has to reconcile against ground truth, because a loan balance drifts from whatever you last saw. This one has nothing to resync — it's recomputing a live percentage of known, fixed inputs against the clock and the calendar, so every number corrects itself the moment you edit an input.
+
+The repo stays private: it reads a real budget workbook, and while neither that nor the live settings file is tracked any more, both are still in the git history.

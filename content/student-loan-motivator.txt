@@ -6,7 +6,9 @@ What it does:
 
 • Instead of simulating amortization from origination, it works off snapshots — you enter the real current principal from your servicer, dated, and it accrues simple daily interest forward from there until the next snapshot resyncs it.<br>
 • The centerpiece is "the race": interest accrued this month versus what you've paid, split by a break-even line, so you know in real time whether you're ahead of the interest or behind it.<br>
-• Loans are ranked into a kill order — highest rate first — so it's obvious which one to attack.<br>
+• Loans are ranked into a kill order — highest rate first, smallest balance breaking ties — so it's obvious which one to attack. Autopay hits the account rather than a loan, and rather than guess at a proportional split, the app cascades the payment down that same kill order, which is what the real transaction history turned out to show.<br>
+• A live rate ladder plots every loan against CPI-U pulled from the BLS API, so whether a given loan is actually costing you in real terms is a glance rather than a calculation.<br>
+• The burn is stated per day, per month, and per year — the yearly figure is the one that actually argues for a bigger payment.<br>
 • Every payment gets an autopsy: how much went to interest versus principal, and how many days closer to freedom it moved you.<br>
 • No real balance ever lives in the repo — the app writes to a path outside the project, and the schema example is entirely fake numbers.
 

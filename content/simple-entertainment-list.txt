@@ -1,0 +1,13 @@
+I kept a running list of things to read and watch across three or four places, and every app I tried to consolidate it into wanted me to declare up front what kind of thing I was adding — book, show, movie — then buried the list under a schema I hadn't asked for. So I built the smallest version that actually works.
+
+Swift and SwiftUI, native macOS, everything stored locally in one JSON file.
+
+The whole model is a title, optional tags, and optional parts:
+
+• Tags are freeform — <em>sports</em>, <em>audiobook</em>, <em>with dad</em> — instead of fixed categories. They normalize to lowercase so the same tag typed two ways stays one tag, and tags I've used before finish themselves as I type: an "e" against a saved "ebook" leaves "book" waiting in grey.<br>
+• Parts are just labels, so "episode 4", "chapter 9", and "pages 40–80" are all the same mechanism rather than three different features. Optional — plenty of items are only a title.<br>
+• Click a tag to filter; sort by newest, oldest, title, or how much is left; group by tag when it helps.<br>
+• Every title, tag line, and part edits in place — no modal, no detail pane, no edit mode to toggle.<br>
+• Finished items move to their own section instead of vanishing, so the list doubles as a record of what I got through.
+
+The part I'd point at is the persistence: the model decodes defensively, so fields added later fall back to defaults rather than failing the whole item. Categories were a fixed enum before they became ordinary tags, and parts were show-specific "episodes" before they became generic — both migrate on read, so the file I started with still opens after two schema changes that would otherwise have thrown it away.
